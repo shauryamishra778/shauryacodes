@@ -1,0 +1,310 @@
+/* Reset default browser margins and paddings for all elements */
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif; /* Default font for the website */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Default border style (invisible/transparent by default) */
+.border {
+    border: 1px solid transparent;
+}
+
+/* Hover effect on elements with 'border' class - shows a green border */
+.border:hover {
+   transform: scale(1.08)
+}
+
+/* Top bar containing the 'MY BIODATA' title */
+.title-bar {
+    height: 50px;
+    background-color: rgb(241, 115, 86); /* Orange/Red background */
+    display: flex; /* Flexbox for layout */
+    text-align: center;
+    justify-content: center; /* Horizontally centers the title */
+}
+
+/* Styling for the main title text */
+.title-1 {
+    text-align: center;
+    align-items: center;
+    justify-content: center ;
+    color: white;
+}
+.now{
+    font-size: 5vh;
+    color: rgb(220, 21, 21);
+    font-weight: bold;
+}
+
+/* Main Navigation Bar */
+.navbar {
+    background-color: rgb(38, 127, 204); /* Blue background */
+    height: 80px;
+    margin-top: 0%;
+    display: flex; /* Flexbox to arrange items horizontally */
+    justify-content: space-between; /* Puts space between the left side (brand) and right side (ops) */
+    padding: 0 30px; /* Left and right padding inside the navbar */
+    align-items: center; /* Vertically centers the items inside the navbar */
+}
+
+/* Group container for the Logo and Name on the left side */
+.nav-brand {
+    display: flex; /* Aligns logo and name in a row */
+    align-items: center; /* Vertically centers logo and name */
+    gap: 20px;
+    justify-content: space-between ; /* Space between the logo and the name */
+}
+
+/* Container to hold the logo and keep its size fixed in the layout */
+.nav-logo-container {
+    width: 72px;
+    height: 72px;
+    cursor: pointer; /* Shows a hand icon when hovering the container */
+}
+
+/* Logo image styling */
+.nav-logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%; /* Makes the image perfectly round */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    transition: all 0.4s ease; /* Smooth animation for hover effects */
+    position: relative;
+    z-index: 100; /* Keeps the logo above other standard elements */
+}
+
+/* Logo Hover Effect: Shows the image in full size at the center of the screen */
+/* Applying hover to the container fixes the flickering (shivering) issue */
+.nav-logo-container:hover .nav-logo {
+    position: fixed; /* Takes the image out of normal flow and fixes it to the screen */
+    top: 50%; /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Adjusts position to perfectly center the image */
+    width: auto;
+    height: auto;
+    max-width: 90vw; /* Maximum width is 90% of the viewport width */
+    max-height: 90vh; /* Maximum height is 90% of the viewport height */
+    border-radius: 8px; /* Slightly rounded corners instead of full circle */
+    z-index: 1000; /* Brings the image to the very front */
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7); /* Creates a dark semi-transparent overlay covering the rest of the screen */
+}
+
+/* Styling for your name in the navbar */
+.nav-name {
+    color: bisque; /* Light yellowish-brown color */
+    font-size: 2vh;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+.nav-name h2{justify-content: center;
+    width: 30vh;
+    writing-mode: horizontal-tb;
+    text-orientation: upright;
+}   
+
+/* Container for the navigation options (Home, Education, etc.) on the right side */
+.nav-ops {
+    display: flex; /* Arranges the options in a row */
+    text-align: center;
+    align-items: center;
+    margin-left: 25%; /* Vertically centers the text */
+}
+
+/* Styling for individual options (p tags) inside the navigation */
+.nav-ops p {
+    margin-left: 25px; /* Adds space between each option */
+    display: inline;
+    font-weight: bold;
+    color: rgb(170, 247, 16); /* Neon green text color */
+}
+/* हीरो सेक्शन - मुख्य बैनर */
+.hero {
+    background-color: bisque; /* पीला बैकग्राउंड रंग */
+    height: 600px; /* ऊंचाई 600 पिक्सेल */
+    display: flex; /* फ्लेक्सबॉक्स लेआउट */
+    align-items: center; /* बीच में वर्टिकली सेंटर करें */
+    justify-content: space-between; /* दोनों तरफ जगह बनाएं */
+    padding: 0 40px; /* दोनों ओर 40px पैडिंग */
+}
+.hero-img{
+    width: auto; /* हीरो सेक्शन का आधा हिस्सा इमेज के लिए */
+    height: 100%; /* पूरी ऊंचाई */
+    display: flex;
+}
+.hero-txt details summary{
+    font-size: 10vh;
+    font-weight: bold;
+    color: rgb(33, 225, 23); /* नीला रंग */
+    cursor: pointer; /* कर्सर को पॉइंटर में बदलें */
+}
+.hero-txt details:hover {
+    transform: translateX(2.5vh); /* होवर पर नारंगी रंग */
+}
+.hero-img :hover {
+    transform: scale(1.08)}
+.txt{
+    font-size: 2vh;
+    color: rgb(107, 11, 191);
+    cursor:pointer;
+    font-weight: bold;
+    text-align: justify;
+}
+.foot-panel{
+    height: 300px;
+    background-color: rgb(45, 41, 40); /* Orange/Red background */
+    display: flex; /* Flexbox for layout */
+    /* Horizontally centers the title */
+}
+.contact p{
+    font-size: 5vh;
+    color: rgb(255, 255, 255);
+    text-align: left;
+}
+.contact a{
+    font-size: 3vh;
+    color: rgb(205, 232, 142);
+    text-align: left;
+}
+.contact h2{
+    font-size: 5vh;
+    color: rgb(255, 255, 255);
+    text-align: left;
+}
+.ctc:hover{
+    transform: translateX(2.5vh);
+}
+.education-head{
+    background-color: silver;
+    height: fit-content;
+    text-align: center;
+    align-items: center;
+}
+.education-head h2{
+    font-size: 10vh;
+    color: rgb(14, 171, 131); /* नीला रंग */
+    cursor: pointer; /* कर्सर को पॉइंटर में बदलें */
+}
+.high{
+    background-color: rgb(241, 115, 86); /* Orange/Red background */
+    height: fit-content;
+    text-align: center;
+    align-items: center;
+
+}
+.inter{
+    background-color: rgb(38, 127, 204); /* Blue background */
+    height: fit-content;
+    text-align: center;
+    align-items: center;
+}
+.pursue{
+    background-color: rgb(161, 43, 13); /* Orange/Red background */
+    height: fit-content;
+    text-align: center;
+    align-items: center;
+}
+.gap{
+    height: 100px;
+    background-color: wheat;
+}
+.skills-head{
+    background-color: rgb(229, 19, 19);
+    height: fit-content;
+    text-align: center;
+    align-items: center;
+}
+.skills-head h2{
+    font-size: 10vh;
+    color: rgb(255, 255, 255); /* नीला रंग */
+    cursor: pointer; /* कर्सर को पॉइंटर में बदलें */
+}
+.basic{
+    background-color: rgb(229, 117, 192); /* Blue background */
+    height: fit-content;
+   
+}
+.basic ul{
+    padding-left: 40px;
+    text-align: center;
+    align-items: center;
+
+}
+.basic h1{
+    font-size: 5vh;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(225, 12, 12);
+}
+.basic li{
+    font-size: 3vh;
+    color: rgb(185, 241, 199);
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+.progress h1{
+    font-size: 5vh;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(137, 6, 244);
+}
+.progress ul{
+    padding-left: 40px;
+    text-align: center;
+    align-items: center;
+    color: tan;
+
+}
+.line{
+    display: flex;
+    height: 400px;
+    margin: 20px;
+    background-color: rgb(255, 255, 255);
+    border: 2px dotted rgb(103, 6, 6);
+    justify-content: center;
+    align-items: center;
+}
+.cont-me{
+
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    background-color: rgb(137, 6, 244);
+}
+.cont-form{
+    background-color: white;
+    color: black;
+    align-items: center;
+    text-align: center;
+    
+    }
+.cont-form input, .cont-form textarea{
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.cont-form input[type="submit"]{
+    background-color: rgb(137, 6, 244);
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+}
+.cont-form input[type="submit"]:hover{
+    background-color: rgb(103, 6, 6);
+}
+.cont-form textarea{
+    height: 150px;
+    resize: none;
+}
