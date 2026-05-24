@@ -348,7 +348,7 @@ img, .nav-logo, .hero-img img{
         padding: 0.5rem 0;
         flex-wrap: wrap;
     }
-    .nav-ops :hover {
+    .now {
         transform: none;
         font-size: large;
         color: rosybrown;
