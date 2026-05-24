@@ -101,18 +101,23 @@
     justify-content: center;
     display: flex;
 }
-.nav-name h2{justify-content: center;
-    width: 30vh;
+.nav-name h2{
+    justify-content: center;
+    max-width: 220px;
     writing-mode: horizontal-tb;
     text-orientation: upright;
-}   
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /* Container for the navigation options (Home, Education, etc.) on the right side */
 .nav-ops {
     display: flex; /* Arranges the options in a row */
     text-align: center;
     align-items: center;
-    margin-left: 25%; /* Vertically centers the text */
+    margin-left: auto; /* Push ops to the right and allow responsiveness */
 }
 
 /* Styling for individual options (p tags) inside the navigation */
@@ -125,15 +130,18 @@
 /* हीरो सेक्शन - मुख्य बैनर */
 .hero {
     background-color: bisque; /* पीला बैकग्राउंड रंग */
-    height: 600px; /* ऊंचाई 600 पिक्सेल */
+    min-height: 60vh; /* flexible height for different screens */
     display: flex; /* फ्लेक्सबॉक्स लेआउट */
     align-items: center; /* बीच में वर्टिकली सेंटर करें */
     justify-content: space-between; /* दोनों तरफ जगह बनाएं */
-    padding: 0 40px; /* दोनों ओर 40px पैडिंग */
+    gap: 20px;
+    padding: 2rem; /* responsive padding */
+    flex-wrap: wrap; /* allow stacking on small screens */
 }
 .hero-img{
-    width: auto; /* हीरो सेक्शन का आधा हिस्सा इमेज के लिए */
-    height: 100%; /* पूरी ऊंचाई */
+    width: 45%;
+    max-width: 480px;
+    height: auto;
     display: flex;
 }
 .hero-txt details summary{
@@ -307,4 +315,58 @@
 .cont-form textarea{
     height: 150px;
     resize: none;
+}
+
+/* Responsive utilities */
+img, .nav-logo, .hero-img img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Prevent the large fixed-position logo preview on small screens */
+@media (max-width: 600px) {
+    .nav-logo-container:hover .nav-logo {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        max-width: 72px;
+        max-height: 72px;
+        box-shadow: none;
+    }
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 0.5rem 1rem;
+    }
+    .nav-ops {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        gap: 12px;
+        padding: 0.5rem 0;
+        flex-wrap: wrap;
+    }
+    .hero {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .hero-img{width: 80%; order: 2;}
+    .hero-txt{width: 100%; order: 1}
+    .nav-name h2{max-width:160px}
+}
+
+@media (max-width: 480px) {
+    .now{font-size: 4vh}
+    .contact p, .contact h2 {font-size: 3.2vh}
+    .title-bar{height: 44px}
+    .nav-logo{width:56px;height:56px}
 }
