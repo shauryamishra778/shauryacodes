@@ -348,6 +348,11 @@ img, .nav-logo, .hero-img img{
         padding: 0.5rem 0;
         flex-wrap: wrap;
     }
+    .nav-ops :hover {
+        transform: none;
+        font-size: large;
+        color: rosybrown;
+    }
     .hero {
         padding: 1rem;
     }
