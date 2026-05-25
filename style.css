@@ -86,7 +86,7 @@
     height: auto;
     max-width: 90vw; /* Maximum width is 90% of the viewport width */
     max-height: 90vh; /* Maximum height is 90% of the viewport height */
-    border-radius: 8px; /* Slightly rounded corners instead of full circle */
+    border-radius:50%; /* Slightly rounded corners instead of full circle */
     z-index: 1000; /* Brings the image to the very front */
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7); /* Creates a dark semi-transparent overlay covering the rest of the screen */
 }
