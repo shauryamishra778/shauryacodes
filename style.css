@@ -72,7 +72,7 @@
     object-fit: cover; /* Ensures the image covers the area without stretching */
     transition: all 0.4s ease; /* Smooth animation for hover effects */
     position: relative;
-    z-index: 100; /* Keeps the logo above other standard elements */
+     /* Keeps the logo above other standard elements */
 }
 
 /* Logo Hover Effect: Shows the image in full size at the center of the screen */
