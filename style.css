@@ -71,7 +71,7 @@
     border-radius: 50%; /* Makes the image perfectly round */
     object-fit: cover; /* Ensures the image covers the area without stretching */
     transition: all 0.4s ease; /* Smooth animation for hover effects */
-    position: relative;
+    position: fixed;
      /* Keeps the logo above other standard elements */
 }
 
