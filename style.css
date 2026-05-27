@@ -1,4 +1,5 @@
 /* Reset default browser margins and paddings for all elements */
+/* सभी ब्राउज़र के डिफ़ॉल्ट मार्जिन और पैडिंग हटाएं */
 * {
     margin: 0px;
     padding: 0px;
@@ -7,22 +8,28 @@
 }
 
 /* Default border style (invisible/transparent by default) */
+/* डिफ़ॉल्ट बॉर्डर स्टाइल (पहले से छिपा हुआ) */
 .border {
     border: 1px solid transparent;
 }
 
 /* Hover effect on elements with 'border' class - shows a green border */
+/* hover पर बॉर्डर को थोड़ा बड़ा दिखाने का effect */
 .border:hover {
    transform: scale(1.08)
 }
 
 /* Top bar containing the 'MY BIODATA' title */
+/* शीर्ष बार जिसमें MY BIODATA शीर्षक है */
 .title-bar {
     height: 50px;
     background-color: rgb(241, 115, 86); /* Orange/Red background */
     display: flex; /* Flexbox for layout */
     text-align: center;
     justify-content: center; /* Horizontally centers the title */
+    width: 100%;
+    max-width: 100%;
+    /* AI edited: fixed width value */
 }
 
 /* Styling for the main title text */
@@ -39,6 +46,7 @@
 }
 
 /* Main Navigation Bar */
+/* मुख्य नेविगेशन बार */
 .navbar {
     background-color: rgb(38, 127, 204); /* Blue background */
     height: 80px;
@@ -47,17 +55,23 @@
     justify-content: space-between; /* Puts space between the left side (brand) and right side (ops) */
     padding: 0 30px; /* Left and right padding inside the navbar */
     align-items: center; /* Vertically centers the items inside the navbar */
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap; /* AI edited: allow navbar items to wrap on small screens */
 }
 
 /* Group container for the Logo and Name on the left side */
+/* बाईं ओर लोगो और नाम के समूह के लिए कंटेनर */
 .nav-brand {
     display: flex; /* Aligns logo and name in a row */
     align-items: center; /* Vertically centers logo and name */
     gap: 20px;
-    justify-content: space-between ; /* Space between the logo and the name */
+    justify-content: flex-start; /* AI edited: left-align logo/name */
+    width: auto;
 }
 
 /* Container to hold the logo and keep its size fixed in the layout */
+/* लोगो के आकार को फ़िक्स रखने वाला कंटेनर */
 .nav-logo-container {
     width: 72px;
     height: 72px;
@@ -65,15 +79,15 @@
 }
 
 /* Logo image styling */
+/* लोगो इमेज की स्टाइलिंग */
 .nav-logo {
-    width: auto;
-    height: auto;
+    width: 72px;
+    height: 72px;
     border-radius: 50%; /* Makes the image perfectly round */
     object-fit: cover; /* Ensures the image covers the area without stretching */
     transition: all 0.4s ease; /* Smooth animation for hover effects */
-    object-fit: contain;
-     /* Ensures the image is contained within its own layout context when fixed */
-     /* Keeps the logo above other standard elements */
+    position: relative;
+    z-index: 100; /* Keeps the logo above other standard elements */
 }
 
 /* Logo Hover Effect: Shows the image in full size at the center of the screen */
@@ -87,12 +101,13 @@
     height: auto;
     max-width: 90vw; /* Maximum width is 90% of the viewport width */
     max-height: 90vh; /* Maximum height is 90% of the viewport height */
-    border-radius:50%; /* Slightly rounded corners instead of full circle */
+    border-radius: 8px; /* Slightly rounded corners instead of full circle */
     z-index: 1000; /* Brings the image to the very front */
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7); /* Creates a dark semi-transparent overlay covering the rest of the screen */
 }
 
 /* Styling for your name in the navbar */
+/* नेवबार में आपके नाम की स्टाइलिंग */
 .nav-name {
     color: bisque; /* Light yellowish-brown color */
     font-size: 2vh;
@@ -102,54 +117,54 @@
     justify-content: center;
     display: flex;
 }
-.nav-name h2{
-    justify-content: center;
-    max-width: 220px;
+.nav-name h2{justify-content: center;
+    width: 30vh;
     writing-mode: horizontal-tb;
     text-orientation: upright;
-    font-size: 1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+}   
 
 /* Container for the navigation options (Home, Education, etc.) on the right side */
+/* दाईं ओर navigation links के लिए कंटेनर */
 .nav-ops {
     display: flex; /* Arranges the options in a row */
     text-align: center;
     align-items: center;
-    margin-left: auto; /* Push ops to the right and allow responsiveness */
+    margin-left: auto; /* Right-align navigation */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    gap: 15px;
+    /* AI edited: fixed page links alignment */
 }
 
 /* Styling for individual options (p tags) inside the navigation */
 .nav-ops p {
-    margin-left: 25px; /* Adds space between each option */
+    margin: 0;
     display: inline;
     font-weight: bold;
     color: rgb(170, 247, 16); /* Neon green text color */
 }
 /* हीरो सेक्शन - मुख्य बैनर */
+/* पेज का प्रमुख भाग जो आकर्षक परिचय देता है */
 .hero {
     background-color: bisque; /* पीला बैकग्राउंड रंग */
-    min-height: 60vh; /* flexible height for different screens */
+    height: 600px; /* ऊंचाई 600 पिक्सेल */
     display: flex; /* फ्लेक्सबॉक्स लेआउट */
     align-items: center; /* बीच में वर्टिकली सेंटर करें */
     justify-content: space-between; /* दोनों तरफ जगह बनाएं */
-    gap: 20px;
-    padding: 2rem; /* responsive padding */
-    flex-wrap: wrap; /* allow stacking on small screens */
+    padding: 0 40px; /* दोनों ओर 40px पैडिंग */
 }
 .hero-img{
-    width: 45%;
-    max-width: 480px;
-    height: auto;
+    width: auto; /* हीरो सेक्शन का आधा हिस्सा इमेज के लिए */
+    height: 100%; /* पूरी ऊंचाई */
     display: flex;
+    /* हीरो इमेज को बीच में लाने के लिए flex कंटेनर */
 }
 .hero-txt details summary{
     font-size: 10vh;
     font-weight: bold;
     color: rgb(33, 225, 23); /* नीला रंग */
     cursor: pointer; /* कर्सर को पॉइंटर में बदलें */
+    list-style: none; /* डिफ़ॉल्ट डिस्क को हटाएं */
+    /* ABOUT ME शीर्षक को जोरदार बनाना */
 }
 .hero-txt details:hover {
     transform: translateX(2.5vh); /* होवर पर नारंगी रंग */
@@ -168,11 +183,13 @@
     background-color: rgb(45, 41, 40); /* Orange/Red background */
     display: flex; /* Flexbox for layout */
     /* Horizontally centers the title */
+    /* संपर्क जानकारी को ठीक से प्रदर्शित करने वाला फूटर */
 }
 .contact p{
     font-size: 5vh;
     color: rgb(255, 255, 255);
     text-align: left;
+    /* contact पैराग्राफ को सफेद और readable बनाना */
 }
 .contact a{
     font-size: 3vh;
@@ -183,10 +200,12 @@
     font-size: 5vh;
     color: rgb(255, 255, 255);
     text-align: left;
+    /* contact heading को ग्लोबल फूटर स्टाइल देना */
 }
 .ctc:hover{
     transform: translateX(2.5vh);
 }
+/* शिक्षा सेक्शन हेडर */
 .education-head{
     background-color: silver;
     height: fit-content;
@@ -221,6 +240,7 @@
     height: 100px;
     background-color: wheat;
 }
+/* स्किल्स सेक्शन हेडर */
 .skills-head{
     background-color: rgb(229, 19, 19);
     height: fit-content;
@@ -232,6 +252,7 @@
     color: rgb(255, 255, 255); /* नीला रंग */
     cursor: pointer; /* कर्सर को पॉइंटर में बदलें */
 }
+/* बेसिक स्किल्स बॉक्स */
 .basic{
     background-color: rgb(229, 117, 192); /* Blue background */
     height: fit-content;
@@ -260,6 +281,7 @@
     line-height: 1.5;
     vertical-align: middle;
 }
+/* प्रोग्रेस सेक्शन का शीर्षक */
 .progress h1{
     font-size: 5vh;
     color: rgb(255, 255, 255);
@@ -289,6 +311,7 @@
     font-weight: bold;
     background-color: rgb(137, 6, 244);
 }
+/* संपर्क फ़ॉर्म की स्टाइल */
 .cont-form{
     background-color: white;
     color: black;
@@ -318,61 +341,155 @@
     resize: none;
 }
 
-/* Responsive utilities */
-img, .nav-logo, .hero-img img{
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Prevent the large fixed-position logo preview on small screens */
-@media (max-width: 600px) {
-    .nav-logo-container:hover .nav-logo {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        max-width: 72px;
-        max-height: 72px;
-        box-shadow: none;
-    }
+/* Responsive code: छोटे स्क्रीन पर layout adjust करेगा */
+/* AI edited: responsive styles added */
+@media (max-width: 768px) {
     .navbar {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 10px;
         height: auto;
-        padding: 0.5rem 1rem;
+    }
+    .now{
+        font-size: 5%;
+    }
+    .nav-brand {
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+    .nav-logo-container {
+        width: 60px;
+        height: 60px;
+    }
+    .nav-logo {
+        width: 60px;
+        height: 60px;
+    }
+    .nav-name h2 {
+        font-size: 1rem;
+        width: auto;
     }
     .nav-ops {
-        width: 100%;
-        justify-content: center;
         margin-left: 0;
-        gap: 12px;
-        padding: 0.5rem 0;
+        justify-content: center;
         flex-wrap: wrap;
+        gap: 10px;
     }
-    .now {
-        transform: none;
-        font-size: large;
-        color: rosybrown;
+    .nav-ops p {
+        margin-left: 0;
+        font-size: 0.95rem;
+        padding: 5px 8px;
     }
-    .hero {
-        padding: 1rem;
-    }
-}
-
-@media (max-width: 900px) {
     .hero {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        justify-content: center;
+        padding: 20px 10px;
+        height: auto;
     }
-    .hero-img{width: 80%; order: 2;}
-    .hero-txt{width: 100%; order: 1}
-    .nav-name h2{max-width:160px}
+    .hero-img {
+        width: 100%;
+        height: auto;
+    }
+    .hero-img img {
+        max-width: 90%;
+        height: auto;
+    }
+    .hero-txt details summary {
+        font-size: 6vw;
+    }
+    .txt {
+        font-size: 1rem;
+    }
+    .foot-panel {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+    }
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+    .contact p,
+    .contact a {
+        font-size: 1rem;
+    }
+    .education-head h2,
+    .skills-head h2,
+    .basic h1,
+    .progress h1 {
+        font-size: 2rem;
+    }
+    .basic li,
+    .progress ul {
+        font-size: 1rem;
+    }
+    .cont-form input,
+    .cont-form textarea {
+        width: 90%;
+    }
+    .cont-form input[type="submit"] {
+        width: 60%;
+    }
 }
 
 @media (max-width: 480px) {
-    .now{font-size: 4vh}
-    .contact p, .contact h2 {font-size: 3.2vh}
-    .title-bar{height: 44px}
-    .nav-logo{width:56px;height:56px}
+    .navbar {
+        padding: 10px 5px;
+    }
+    .hero {
+        padding: 15px 8px;
+    }
+    .hero-txt details summary {
+        font-size: 5.5vw;
+    }
+    .contact h2 {
+        font-size: 1.3rem;
+    }
+    .contact p,
+    .contact a {
+        font-size: 0.95rem;
+    }
+    .nav-ops p {
+        font-size: 0.9rem;
+        padding: 4px 6px;
+    }
+}
+
+/* Landscape mode adjustments */
+/* लैंडस्केप मोड में लेआउट सुधार */
+/* AI edited: landscape mode fixes */
+@media (orientation: landscape) and (max-height: 650px) {
+    .hero {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        min-height: 50vh;
+    }
+    .hero-img {
+        width: 45%;
+        height: auto;
+    }
+    .hero-img img {
+        max-width: 100%;
+        height: auto;
+    }
+    .hero-txt {
+        width: 50%;
+        text-align: left;
+    }
+    .hero-txt details summary {
+        font-size: 4vw;
+    }
+    .contact p,
+    .contact a {
+        font-size: 0.95rem;
+    }
+    .foot-panel {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px 30px;
+    }
 }
